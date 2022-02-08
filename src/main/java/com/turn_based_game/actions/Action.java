@@ -1,4 +1,6 @@
-package com.turn_based_game;
+package com.turn_based_game.actions;
+
+import com.turn_based_game.effects.Effects;
 
 import java.util.ArrayList;
 import java.util.List;

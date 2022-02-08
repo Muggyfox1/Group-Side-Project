@@ -10,7 +10,7 @@ bkelley01
 
 [Malachi Gruenhagen](https://github.com/nurse-the-code)
 
-(your name here)
+[Jay Chen] (https://github.com/jcsunflower)
 
 (your name here)
 

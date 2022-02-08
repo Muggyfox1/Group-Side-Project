@@ -20,8 +20,10 @@ public class BattleManager {
             Combatant otherCombatant = currentTurn == 0 ? combatantB : combatantA;
 
             //prompt currentCombatant for an action
+            //Action action = currentCombatant.promptforaction()
 
             //run currentCombatant action
+            //action.doAction(currentCombatant, otherCombatant);
 
             //swap turns
             currentTurn = currentTurn == 0 ? 1 : 0;

@@ -1,5 +1,7 @@
 package com.turn_based_game;
 
+import com.turn_based_game.actions.Action;
+
 import java.util.List;
 
 public class Combatant {

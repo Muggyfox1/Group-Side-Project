@@ -1,7 +1,7 @@
 package com.turn_based_game.effects;
 
 import com.turn_based_game.Combatant;
-
+@Deprecated
 public abstract class Effect {
     Combatant target;
     int power;

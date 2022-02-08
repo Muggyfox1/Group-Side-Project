@@ -4,7 +4,7 @@ A project made by a group of 6 aspiring developers.
 ## The developers:
 Muggyfox1
 
-Malachi Gruenhagen (nurse-the-code)
+[Malachi Gruenhagen](https://github.com/nurse-the-code)
 
 (your name here)
 

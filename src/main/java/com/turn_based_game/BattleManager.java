@@ -1,5 +1,8 @@
 package com.turn_based_game;
 
+import com.turn_based_game.actions.Action;
+import com.turn_based_game.actions.BasicAttack;
+
 import java.util.Scanner;
 
 public class BattleManager {
@@ -8,8 +11,11 @@ public class BattleManager {
 
     Scanner scanner = new Scanner(System.in);
 
-    Combatant combatantA = new Player();
-    Combatant combatantB = new Enemy();
+
+    Action[] actions = new Action[]{new BasicAttack()};
+
+    Combatant combatantA = new Player("programmer",10,1,actions);
+    Combatant combatantB = new Enemy("programmer",10,1,actions);
 
     public void Run(){
         System.out.println("\nBattle has started!\n");

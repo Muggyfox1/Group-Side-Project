@@ -5,7 +5,7 @@ import com.turn_based_game.effects.Effect;
 
 import java.util.List;
 
-public class BasicAttack extends Action{
+ public class BasicAttack extends Action{
     // Instance Variables
 
 

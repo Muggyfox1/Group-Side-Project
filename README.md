@@ -4,7 +4,7 @@ A project made by a group of 6 aspiring developers.
 ## The developers:
 Muggyfox1
 
-(your name here)
+yildirimao
 
 bkelley01
 

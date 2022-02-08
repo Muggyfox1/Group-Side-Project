@@ -8,15 +8,16 @@ public class BattleManager {
 
     Scanner scanner = new Scanner(System.in);
 
-    //Combatant combatantA
-    //Combatant combatantB
+    Combatant combatantA = new Player();
+    Combatant combatantB = new Enemy();
 
     public void Run(){
         System.out.println("\nBattle has started!\n");
 
         while(true){
             turnCount++;
-            //Combatant currentCombatant = currentTurn == 0 ? combatantA : combatantB;
+            Combatant currentCombatant = currentTurn == 0 ? combatantA : combatantB;
+            Combatant otherCombatant = currentTurn == 0 ? combatantB : combatantA;
 
             //prompt currentCombatant for an action
 
@@ -24,6 +25,8 @@ public class BattleManager {
 
             //swap turns
             currentTurn = currentTurn == 0 ? 1 : 0;
+
+
             break;
         }
 

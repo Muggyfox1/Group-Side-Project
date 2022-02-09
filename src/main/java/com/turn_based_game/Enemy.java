@@ -12,4 +12,8 @@ public class Enemy extends Combatant {
     // Behaviors
     public void chooseRandomAction() {}
 
+    @Override
+    public Action PromptAction() {
+        return getActionsAvailable().get(0);
+    }
 }

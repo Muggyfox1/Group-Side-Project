@@ -11,31 +11,60 @@ public class BattleManager {
 
     Scanner scanner = new Scanner(System.in);
 
-
     Action[] actions = new Action[]{new BasicAttack()};
 
-    Combatant combatantA = new Player("programmer",10,1,actions);
-    Combatant combatantB = new Enemy("programmer",10,1,actions);
+    Combatant combatantA = new Player("programmer", 10, 1, actions);
+    Combatant combatantB = new Enemy("Bug", 10, 1, actions);
 
-    public void Run(){
+    public void Run() {
         System.out.println("\nBattle has started!\n");
 
-        while(true){
+        while (true) {
             turnCount++;
             Combatant currentCombatant = currentTurn == 0 ? combatantA : combatantB;
             Combatant otherCombatant = currentTurn == 0 ? combatantB : combatantA;
 
             //prompt currentCombatant for an action
-            //Action action = currentCombatant.promptforaction()
+            Action action = currentCombatant.PromptAction();
 
             //run currentCombatant action
-            //action.doAction(currentCombatant, otherCombatant);
+            System.out.println(currentCombatant.getName() + " uses " + action.getName());
+            action.doAction(currentCombatant, otherCombatant);
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted.");
+            }
+
+
+            String battleStatus = String.format("%n %s %s/%s     |     %s %s/%s %n",
+                    combatantA.getName(), combatantA.getCurrentHealth(), combatantA.getMaxHealth(),
+                    combatantB.getName(), combatantB.getCurrentHealth(), combatantB.getMaxHealth());
+            System.out.println(battleStatus);
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted.");
+            }
+
+            //check for victory
+            int comA = combatantA.getCurrentHealth();
+            int comB = combatantB.getCurrentHealth();
+            if (comA <= 0 || comB <= 0) {
+                if (comA <= 0 && comB <= 0) {
+                    System.out.println("It's a tie, they both defeated eachother at the same time.");
+                } else if (comB <= 0) {
+                    System.out.println(combatantA.getName() + " Is the winner!");
+                } else if (comA <= 0) {
+                    System.out.println(combatantB.getName() + " Is the winner!");
+                }
+                break;
+            }
 
             //swap turns
             currentTurn = currentTurn == 0 ? 1 : 0;
-
-
-            break;
         }
 
         System.out.println("\nBattle has finished!\n");

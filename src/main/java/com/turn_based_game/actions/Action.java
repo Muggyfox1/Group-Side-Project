@@ -8,11 +8,13 @@ import java.util.List;
 
 public abstract class Action {
     // Instance Variables
+    private String name;
     private int accuracy;
     private int power;
 
     // Constructors
-    public Action(int accuracy, int power){
+    public Action(String name, int accuracy, int power){
+        this.name = name;
         this.accuracy = accuracy;
         this.power = power;
     }
@@ -24,6 +26,10 @@ public abstract class Action {
 
     public int getPower() {
         return power;
+    }
+
+    public String getName() {
+        return name;
     }
 
     // Behaviors

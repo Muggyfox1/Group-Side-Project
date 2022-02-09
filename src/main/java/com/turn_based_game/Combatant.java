@@ -15,6 +15,25 @@ public abstract class Combatant {
     private int currentDefence;
     private List<Action> actionsAvailable;
 
+
+    //getters
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCurrentHealth() {
+        return currentHealth;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public List<Action> getActionsAvailable() {
+        return actionsAvailable;
+    }
+
     // Constructors
     public Combatant(String name, int maxHealth, int maxDefence, Action[] actionsAvailable) {
         this.name = name;
@@ -26,13 +45,19 @@ public abstract class Combatant {
     }
 
     // Behaviors
-    public void increaseHealth(int hp) {}
+    public void increaseHealth(int hp) {
+        this.currentHealth += hp;
+    }
 
-    public void decreaseHealth(int hp) {}
+    public void decreaseHealth(int hp) {
+        this.currentHealth -= hp;
+    }
 
     public void increaseDefense(int amount) {}
 
     public void decreaseDefense(int amount) {}
+
+    public abstract Action PromptAction();
 
     public void doAction(Action actionToDo) {}
 }

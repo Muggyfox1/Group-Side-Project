@@ -11,7 +11,7 @@ import java.util.List;
 
     // Constructors
     public BasicAttack(){
-        super(100, 5);
+        super("Basic Attack", 100, 5);
     }
 
     // Getters and Setters

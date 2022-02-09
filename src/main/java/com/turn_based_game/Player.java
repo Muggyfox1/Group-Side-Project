@@ -12,4 +12,9 @@ public class Player extends Combatant {
     }
 
     public void promptPlayerForAction() {}
+
+    @Override
+    public Action PromptAction() {
+        return getActionsAvailable().get(0);
+    }
 }

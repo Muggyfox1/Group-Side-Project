@@ -25,17 +25,26 @@ public class BattleManager {
             Combatant currentCombatant = currentTurn == 0 ? combatantA : combatantB;
             Combatant otherCombatant = currentTurn == 0 ? combatantB : combatantA;
 
+            //Print Battle Status
+            //TODO: Insert printBattleStatus(); here
+
             //prompt currentCombatant for an action
-            //Action action = currentCombatant.promptforaction()
+            //TODO: Action action = currentCombatant.promptForAction()
+            //TODO: Insert printActionUsed(); here
 
             //run currentCombatant action
-            //action.doAction(currentCombatant, otherCombatant);
+            //TODO: action.doAction(currentCombatant, otherCombatant);
+
+            //Check for victory
+//            Boolean endBattle;//TODO: Insert = isBattleOver();
+//            if(endBattle){
+//                break;
+//            }
 
             //swap turns
             currentTurn = currentTurn == 0 ? 1 : 0;
 
-
-            break;
+            break;//TODO: remove when done with "isBattleOver()"
         }
 
         System.out.println("\nBattle has finished!\n");

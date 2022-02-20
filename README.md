@@ -1,5 +1,5 @@
 # Group-Side-Project
-A project made by a group of 6 aspiring developers.
+A project made by a group of 5 aspiring developers.
 
 ## The developers:
 [Muggyfox1](https://github.com/Muggyfox1)

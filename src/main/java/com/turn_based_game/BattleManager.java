@@ -11,7 +11,6 @@ public class BattleManager {
 
     Scanner scanner = new Scanner(System.in);
 
-
     Action[] actions = new Action[]{new BasicAttack()};
 
     Combatant combatantA = new Player("programmer",10,1,actions);
@@ -47,6 +46,7 @@ public class BattleManager {
             break;//TODO: remove when done with "isBattleOver()"
         }
 
+        //TODO: write out victory text
         System.out.println("\nBattle has finished!\n");
     }
 }

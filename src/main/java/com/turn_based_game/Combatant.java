@@ -15,6 +15,9 @@ public abstract class Combatant {
     private int currentDefence;
     private List<Action> actionsAvailable;
 
+    // Getters and Setters
+    // TODO: add Getters and Setters (See repo issue #10 for what's needed.)
+
     // Constructors
     public Combatant(String name, int maxHealth, int maxDefence, Action[] actionsAvailable) {
         this.name = name;

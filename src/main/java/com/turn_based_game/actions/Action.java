@@ -27,5 +27,5 @@ public abstract class Action {
     }
 
     // Behaviors
-    public abstract void doAction(Combatant self, Combatant target);
+    public abstract void execute(Combatant self, Combatant target);
 }

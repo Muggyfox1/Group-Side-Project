@@ -15,7 +15,8 @@ import com.turn_based_game.Combatant;
 
 
     // Behaviors
-    public void doAction(Combatant self, Combatant target){
+    @Override
+    public void execute(Combatant self, Combatant target){
         target.decreaseHealth(getPower());
     }
 

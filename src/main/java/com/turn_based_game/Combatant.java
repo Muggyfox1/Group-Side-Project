@@ -8,6 +8,7 @@ import java.util.List;
 public abstract class Combatant {
 
     // Instance Variables
+    //TODO: implement team property
     private String name;
     private int maxHealth;
     private int currentHealth;
@@ -91,4 +92,6 @@ public abstract class Combatant {
     public void removeAction(Action actionToDelete) {
         actions.remove(actionToDelete);
     }
+
+    public abstract Action promptForAction();
 }

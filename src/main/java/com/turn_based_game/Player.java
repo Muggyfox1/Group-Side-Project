@@ -11,5 +11,12 @@ public class Player extends Combatant {
         super(name, maxHealth, maxDefence, actionsAvailable);
     }
 
-    public void promptPlayerForAction() {}
+    // Behaviors
+
+    //present actions to player and get response.
+    // TODO: implement this.
+    @Override
+    public Action promptForAction(){
+        return null;
+    }
 }

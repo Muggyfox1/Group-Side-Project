@@ -1,49 +1,63 @@
 package com.turn_based_game;
 
 import com.turn_based_game.actions.Action;
-import com.turn_based_game.actions.BasicAttack;
+import com.turn_based_game.model.Battle;
 
-import java.util.Scanner;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 
 public class BattleManager {
-    int currentTurn = 0; //0 = players turn, 1 = enemy turn
-    int turnCount = 0;
+    // Instance variables
+    private Battle battle;
+    private int currentTurn = 0;
+    private int turnCount = 0;
+    private InputStream in;
+    private OutputStream out;
 
-    Scanner scanner = new Scanner(System.in);
+    // Constructors
+    public BattleManager(Battle battle, InputStream in, OutputStream out){
+        this.battle = battle;
+        this.in = in;
+        this.out = out;
+    }
 
-    Action[] actions = new Action[]{new BasicAttack()};
-
-    Combatant combatantA = new Player("programmer",10,1,actions);
-    Combatant combatantB = new Enemy("programmer",10,1,actions);
-
+    // Behaviors
     public void Run(){
         System.out.println("\nBattle has started!\n");
 
         while(true){
             turnCount++;
-            Combatant currentCombatant = currentTurn == 0 ? combatantA : combatantB;
-            Combatant otherCombatant = currentTurn == 0 ? combatantB : combatantA;
+            //assign current combatant
+            Combatant currentCombatant = battle.getNextCombatant();
 
             //Print Battle Status
-            //TODO: Insert printBattleStatus(); here
+            //TODO: Insert getBattleStatus(); here
+
+            //String battleStatus = String.format("%n %s %s/%s     |     %s %s/%s %n",
+//                    combatantA.getName(), combatantA.getCurrentHealth(), combatantA.getMaxHealth(),
+//                    combatantB.getName(), combatantB.getCurrentHealth(), combatantB.getMaxHealth());
+//            System.out.println(battleStatus);
 
             //prompt currentCombatant for an action
-            //TODO: Action action = currentCombatant.promptForAction()
-            //TODO: Insert printActionUsed(); here
+            Action action = currentCombatant.promptForAction();
+
+            //TODO: create something like printActionUsed(); here
 
             //run currentCombatant action
-            //TODO: action.doAction(currentCombatant, otherCombatant);
+            //TODO: action.execute(currentCombatant, otherCombatant);
 
-            //Check for victory
-//            Boolean endBattle;//TODO: Insert = isBattleOver();
-//            if(endBattle){
-//                break;
-//            }
+            //check for victory
+            if(battle.isBattleOver()) {
+                Combatant winner = battle.getWinner();
+                break;
+            }
 
-            //swap turns
-            currentTurn = currentTurn == 0 ? 1 : 0;
-
-            break;//TODO: remove when done with "isBattleOver()"
+            //Rotate turn
+            currentTurn++;
+            if(currentTurn >= battle.getCombatants().size()){
+                currentTurn = 0;
+            }
         }
 
         //TODO: write out victory text

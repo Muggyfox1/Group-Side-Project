@@ -10,6 +10,12 @@ public class Enemy extends Combatant {
     }
 
     // Behaviors
-    public void chooseRandomAction() {}
+
+    //Choose a random action from actions
+    // TODO: implement this.
+    @Override
+    public Action promptForAction(){
+        return null;
+    }
 
 }

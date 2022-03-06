@@ -61,26 +61,29 @@ public abstract class Combatant {
 
     // Behaviors
     public void increaseHealth(int amount) {
-        currentHealth += amount;
+        currentHealth += Math.abs(amount);
         if(currentHealth > maxHealth){
             currentHealth = maxHealth;
         }
     }
 
     public void decreaseHealth(int amount) {
-        currentHealth -= amount;
+        currentHealth -= Math.abs(amount);
+        if (currentHealth < 0) {
+            currentHealth = 0;
+        }
     }
 
     public void increaseDefense(int amount) {
-        currentDefence += amount;
-        if(currentDefence > maxDefence){
+        currentDefence += Math.abs(amount);
+        if (currentDefence > maxDefence){
             currentDefence = maxDefence;
         }
     }
 
     public void decreaseDefense(int amount) {
-        currentDefence -= amount;
-        if(currentDefence < 0){
+        currentDefence -= Math.abs(amount);
+        if (currentDefence < 0) {
             currentDefence = 0;
         }
     }

@@ -1,7 +1,8 @@
-package com.turn_based_game.actions;
+package com.turn_based_game.model.actions;
 
-import com.turn_based_game.Combatant;
+import com.turn_based_game.model.Combatant;
 
+//TODO: refactor this to not be abstract
 public abstract class Action {
     // Instance Variables
     private String name;

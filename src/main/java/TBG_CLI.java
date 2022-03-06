@@ -1,10 +1,7 @@
-import com.turn_based_game.BattleManager;
-import com.turn_based_game.Combatant;
-import com.turn_based_game.Enemy;
-import com.turn_based_game.Player;
-import com.turn_based_game.actions.Action;
-import com.turn_based_game.actions.BasicAttack;
-import com.turn_based_game.model.Battle;
+import com.turn_based_game.controller.BattleController;
+import com.turn_based_game.model.*;
+import com.turn_based_game.model.actions.Action;
+import com.turn_based_game.model.actions.BasicAttack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +19,8 @@ public class TBG_CLI {
         combatants.add(bug);
 
         Battle battle = new Battle(combatants);
-        BattleManager battleManager = new BattleManager(battle, System.in, System.out);
-        battleManager.Run();
+        BattleController battleController = new BattleController(battle, System.in, System.out);
+        battleController.Run();
     }
 
 }

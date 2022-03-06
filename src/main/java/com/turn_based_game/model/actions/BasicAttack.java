@@ -1,7 +1,8 @@
-package com.turn_based_game.actions;
+package com.turn_based_game.model.actions;
 
-import com.turn_based_game.Combatant;
+import com.turn_based_game.model.Combatant;
 
+@Deprecated
  public class BasicAttack extends Action{
     // Instance Variables
 

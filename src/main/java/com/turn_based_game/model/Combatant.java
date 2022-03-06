@@ -1,10 +1,11 @@
-package com.turn_based_game;
+package com.turn_based_game.model;
 
-import com.turn_based_game.actions.Action;
+import com.turn_based_game.model.actions.Action;
 
 import java.util.Arrays;
 import java.util.List;
 
+//TODO: refactor this to not be abstract
 public abstract class Combatant {
 
     // Instance Variables
@@ -15,6 +16,7 @@ public abstract class Combatant {
     private int maxDefence;
     private int currentDefence;
     private List<Action> actions;
+    private boolean isPlayer;
 
     // Getters and Setters
     public String getName() {
@@ -46,41 +48,45 @@ public abstract class Combatant {
     }
 
     public boolean isPlayer() {
-        return false;
+        return isPlayer;
     }
 
     // Constructors
-    public Combatant(String name, int maxHealth, int maxDefence, Action[] actions) {
+    public Combatant(String name, int maxHealth, int maxDefence, Action[] actions, Boolean isPlayer) {
         this.name = name;
         this.maxHealth = maxHealth;
         this.currentHealth = maxHealth;
         this.maxDefence = maxDefence;
         this.currentDefence = maxDefence;
         this.actions = Arrays.asList(actions);
+        this.isPlayer = isPlayer;
     }
 
     // Behaviors
     public void increaseHealth(int amount) {
-        currentHealth += amount;
+        currentHealth += Math.abs(amount);
         if(currentHealth > maxHealth){
             currentHealth = maxHealth;
         }
     }
 
     public void decreaseHealth(int amount) {
-        currentHealth -= amount;
+        currentHealth -= Math.abs(amount);
+        if (currentHealth < 0) {
+            currentHealth = 0;
+        }
     }
 
     public void increaseDefense(int amount) {
-        currentDefence += amount;
-        if(currentDefence > maxDefence){
+        currentDefence += Math.abs(amount);
+        if (currentDefence > maxDefence){
             currentDefence = maxDefence;
         }
     }
 
     public void decreaseDefense(int amount) {
-        currentDefence -= amount;
-        if(currentDefence < 0){
+        currentDefence -= Math.abs(amount);
+        if (currentDefence < 0) {
             currentDefence = 0;
         }
     }
@@ -93,5 +99,6 @@ public abstract class Combatant {
         actions.remove(actionToDelete);
     }
 
+    @Deprecated
     public abstract Action promptForAction();
 }

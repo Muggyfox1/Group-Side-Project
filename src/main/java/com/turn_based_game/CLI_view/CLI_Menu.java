@@ -1,4 +1,4 @@
-package com.turn_based_game.CLI_menus;
+package com.turn_based_game.CLI_view;
 
 import java.io.InputStream;
 import java.io.OutputStream;

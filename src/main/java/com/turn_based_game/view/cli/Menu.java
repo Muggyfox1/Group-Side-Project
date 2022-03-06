@@ -1,4 +1,4 @@
-package com.turn_based_game.view;
+package com.turn_based_game.view.cli;
 
 import java.io.InputStream;
 import java.io.OutputStream;

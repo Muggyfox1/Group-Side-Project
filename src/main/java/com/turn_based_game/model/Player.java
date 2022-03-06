@@ -1,14 +1,13 @@
-package com.turn_based_game;
+package com.turn_based_game.model;
 
-import com.turn_based_game.actions.Action;
+import com.turn_based_game.model.actions.Action;
 
-import java.util.Arrays;
-
+@Deprecated
 public class Player extends Combatant {
 
     // Constructors
     public Player(String name, int maxHealth, int maxDefence, Action[] actionsAvailable) {
-        super(name, maxHealth, maxDefence, actionsAvailable);
+        super(name, maxHealth, maxDefence, actionsAvailable, true);
     }
 
     // Behaviors
@@ -16,6 +15,7 @@ public class Player extends Combatant {
     //present actions to player and get response.
     // TODO: implement this.
     @Override
+    @Deprecated
     public Action promptForAction(){
         return null;
     }

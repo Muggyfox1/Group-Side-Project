@@ -1,7 +1,5 @@
 package com.turn_based_game.model;
 
-import com.turn_based_game.Combatant;
-
 import java.util.List;
 
 public class Battle {

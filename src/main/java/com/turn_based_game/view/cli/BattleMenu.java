@@ -1,32 +1,19 @@
-package com.turn_based_game;
+package com.turn_based_game.view.cli;
 
-import com.turn_based_game.actions.Action;
 import com.turn_based_game.model.Battle;
+import com.turn_based_game.model.Combatant;
+import com.turn_based_game.model.actions.Action;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-
-public class BattleManager {
-    // Instance variables
+public class BattleMenu {
     private Battle battle;
     private int currentTurn = 0;
     private int turnCount = 0;
-    private InputStream in;
-    private OutputStream out;
 
-    // Constructors
-    public BattleManager(Battle battle, InputStream in, OutputStream out){
-        this.battle = battle;
-        this.in = in;
-        this.out = out;
-    }
 
-    // Behaviors
-    public void Run(){
+    public void Open() {
         System.out.println("\nBattle has started!\n");
 
-        while(true){
+        while (true) {
             turnCount++;
             //assign current combatant
             Combatant currentCombatant = battle.getNextCombatant();
@@ -48,16 +35,11 @@ public class BattleManager {
             //TODO: action.execute(currentCombatant, otherCombatant);
 
             //check for victory
-            if(battle.isBattleOver()) {
+            if (battle.isBattleOver()) {
                 Combatant winner = battle.getWinner();
                 break;
             }
-
             //Rotate turn
-            currentTurn++;
-            if(currentTurn >= battle.getCombatants().size()){
-                currentTurn = 0;
-            }
         }
 
         //TODO: write out victory text
